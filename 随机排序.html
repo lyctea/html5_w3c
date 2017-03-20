@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        var arr = [23, 12, 34, 56, 67, 87, 90, 45];
+//        function randSort(arr) {
+//            for(var i=0; i<arr.length; i++){
+//                var rand = Math.random()*i;
+//                var tem = arr[rand];
+//                arr[rand] = arr[i];
+//                arr[i] = tem;
+//            }
+//            return arr;
+//        }
+//        console.log(randSort(arr));
+        arr.sort(function(){
+            return Math.random() - 0.5;  //如果>=0.5则返回1，小于0.5则返回-1  随机变换升序或降序，从而实现打乱数组
+        })
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
