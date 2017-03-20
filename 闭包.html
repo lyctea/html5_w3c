@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+    </ul>
+
+    <script>
+        var nodes = document.getElementsByTagName('li');
+        for(var i=0;i<nodes.length;i++){
+            nodes[i].onclick = (function (i) {
+                return function () {
+                    console.log(i);
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>
