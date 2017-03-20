@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        //构造函数
+        function Person(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayjob = function () {
+               // alert(this.job)
+            }
+        }
+        var p1 = new Person("p1", 12, "s");
+        var p2 = new Person("p2", 17, "d");
+        //console.log(p1.sayjob);
+        if (p1.constructor === Person) {
+           // console.log(p2.age);
+        }
+        //p1 p2 作为Person的实力 ， 各自有一个construct(构造函数)属性 指向Person对象
+    </script>
+
+    <script>
+        var Person = function (name) {
+            this.name = name;
+            console.log(this);  //person1
+        }
+        Person.prototype.getName = function () {
+            console.log(this);  //person1
+            return this.name;
+        }
+        var person1 = new Person('Mike');
+        console.log(person1.getName());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
