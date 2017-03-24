@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div id="vv"></div>
+<script>
+    //1 创建ajax核心对象XMLHttpRequest
+    var xmlhttp = null;
+    if (window.XMLHttpRequest){
+        //// 兼容 IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }else if(window.ActiveXObject){
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    /*2 向服务器发起请求
+     method 请求的类型 GET POST
+     文件在服务器的地址
+     async 同步（false）或者异步（true）
+     xmlhttp.open(method,url,async);
+     send(string);*/
+
+    //3.1 同步处理
+    //    if (xmlhttp){
+    //        xmlhttp.open("GET","ajax_info.txt",false);
+    //        xmlhttp.send();
+    //        console.log(xmlhttp.responseText)
+    //        document.getElementById("vv").innerHTML=xmlhttp.responseText;
+    //    }
+
+    //3.2 异步处理
+
+    if (xmlhttp){
+        xmlhttp.open("GET","ajax_info.txt",true);
+        xmlhttp.onreadystatechange=function()
+        {
+            if(xmlhttp.readyState===4 && xmlhttp.status == 200)
+            {
+                document.getElementById("vv").innerHTML=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.send();
+    }else {
+        alert("error");
+    }
+
+
+    /*一共有5中请求状态，从0 到 4 发生变化。
+
+     0: 请求未初始化
+
+     1: 服务器连接已建立
+
+     2: 请求已接收
+
+     3: 请求处理中
+
+     4: 请求已完成，且响应已就绪
+
+
+     xmlhttp.status：响应状态码。这个也是面试比较爱问的，这个必须知道4个以上，比较常见的有：
+
+     200: "OK"
+
+     403   （禁止） 服务器拒绝请求。
+
+     404   （未找到） 服务器找不到请求的网页。
+
+     408  （请求超时） 服务器等候请求时发生超时。
+
+     500   （服务器内部错误）  服务器遇到错误，无法完成请求。*/
+</script>
+</body>
+</html>
