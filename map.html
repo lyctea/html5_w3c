@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        var arr = [1,2,3]; //1,0,[1,2,3]  2,1,[1,2,3]  3,2,[1,2,3]
+        //如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。
+        //如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。
+        var result = arr.map(parseInt);
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
