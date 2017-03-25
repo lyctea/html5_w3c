@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>MR_LP -->  QQ ：3206064928</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" charset="utf-8">
+    var data = [];
+    for(var k = 0; k < 3; k++){     //k是全局作用域的k，在for循环赋值的时候并没有调用函数，赋值
+        data[k] = function(){       //完成后调用，指向的是同一个地址的k， 所以打印的值也是一样的
+            console.log(k);
+        }();
+    }
+    data[0]();
+    data[1]();
+    data[2]();
+</script>
+</html>

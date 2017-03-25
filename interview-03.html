@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<p>
+    你的知识、经验和见解 已有帐号?登录 下载知乎 App 关注问题 1 人关注该...
+    www.zhihu.com/question...  - 百度快照 - 1436条评价周永康
+    前端如何在文章中发现敏感词,然后将背景设置为红色? - loveyunk ...
+    前端如何在文章中发现敏感词,然后将背景设置为红色? 添加评论 分享 0 赞同 反对 loveyunk 编辑于 16:46 添加评论 感谢 分享 收藏 • 没有帮助 • 举报...
+    www.zhihu.com/question...  - 百度快照 - 1436条评价
+    为什么我的提问被删除了!!!而且是没有什么敏感词,内容..._百度知道
+    3个回答 - 提问时间: 2011年06月08日邓小平
+    为什么我的提问被删除了!!!而且是没有什么敏感词,内容很红很专啊!!!电光紫 发布于2011-06-08 22:40 最佳答案 是贴吧吗? 如果是的话你就去问吧主了!! 追...
+    更多关于敏感词加红色的问题>>
+    zhidao.baidu.com/link?...  - 百度快照 - 评价习近平
+    求人帮忙看看敏感词……_红色警戒吧_百度贴吧
+    8条回复 - 发帖时间: 2012年4月8日
+    6回复贴,共1页 <<返回红色警戒吧 求人帮忙看看敏感词…… 只看楼主 收藏 回复我是黑暗神 横扫天下 12 点击看大图,国家名和“演习”都分割了也没用 () ...
+</p>
+<script>
+    //敏感词数组
+    var filterArr = ["习近平","邓小平","周永康"];
+    var p = document.getElementsByTagName("p")[0];
+    for(var i=0;i<filterArr.length;i++){
+        var pattern = new RegExp(filterArr[i],"g");
+        p.innerHTML = p.innerHTML.replace(pattern,"<span style='color: red;'>"+filterArr[i]+"</span>>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MR_LP -->  QQ ：3206064928</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript" charset="utf-8">
+    var z = 10;
+    function foo(){
+        console.log(z);
+    }
+    (function(funArg){
+        var z = 20;
+        funArg();   //函数名是引用类型， 指向同一个全局的foo（） 所以输出12
+    })(foo);
+//*****************************************
+    var b = 0;
+    (function(){
+        var b = 12;
+        return function(){
+            console.log(b);
+        }
+    })()(); // 12   闭包，可以访问到函数外部的变量值
+// ************************************
+    var c = 0;
+    (function(){
+        // var b = 12;
+        return function(){
+            console.log(c);
+        }
+    })()(); // 0  沿着作用域链找到全局作用域中的b
+
+</script>
+</html>
