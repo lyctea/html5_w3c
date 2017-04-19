@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<body>
+<script>
+    function Person(){}
+    function Student(){}
+    Student.prototype = new Person()
+    Student.prototype.constructor = Student
+    var lyc = new Student()
+    var one = new Person()
+
+    lyc instanceof Student //true
+    one instanceof Person   //true
+
+    one instanceof Student //false
+    lyc instanceof Person //true
+
+    console.log(Student.prototype)
+</script>
+</body>
+</html>
