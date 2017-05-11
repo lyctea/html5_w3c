@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function () {
+                var oDiv = document.getElementById('div1')
+                console.log(oDiv)
+                //设置定时器
+                setInterval(function () {
+                    //改变物体位置
+                    oDiv.style.left = oDiv.offsetLeft + 10 + 'px';
+                },30);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn" style="width: 100px;height: 30px"></button>
+    <div id="div1" style="width: 100px;height: 30px;background: red"></div>
+
+</body>
+</html>
