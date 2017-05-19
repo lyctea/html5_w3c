@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--设置IE浏览器的兼容模式版本-->
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <!--设置视口属性值-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div id="top">
+    <nav class="navbar navbar-keller">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><i><img src="img/navbarIcon.png" width="20%" alt=""></i>
+                    <span>学生签到系统</span></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!--网页中间内容-->
+<div id="login-container">
+
+    <div class="tlogin">
+        <!--教师登录表单-->
+        <form action="" method="post"  name="loginform" onsubmit="return false;">
+            <div class="login-title">教师登录</div>
+            <!--账号-->
+            <div class="field">
+                <i class="icon user"></i>
+                <input type="text" id="tId" class="login-text"  placeholder="工号" maxlength="5" onkeyup="value=value.replace(/\s/g,'')"
+                       tabindex="1" data-toggle="tooltip0" data-placement="left" title="工号为5位数字"/>
+            </div>
+            <!--密码-->
+            <div class="field">
+                <i class="icon pwd"></i>
+                <input type="password" id="tPassword" class="login-text" placeholder="密码" onkeyup="value=value.replace(/\s/g,'')"
+                       data-toggle="tooltip1" data-placement="left" title="密码不能为空"/>
+            </div>
+            <!--验证码-->
+            <div class="verify-field">
+                <input type="text" id="verifycode" class="verify-text" maxlength="4" placeholder=" 验证码"/>
+                <img src="http://hongrm.cn/apis/signin/verify/verifycode.jpg" id="refresh" title="看不清楚换一张" alt="验证码"/>
+
+                <div class="remember-field">
+                    <!--<input type="checkbox" class="remember"/><label>记住我</label>-->
+                    <a href="#">忘记密码?</a>
+                </div>
+            </div>
+            <div class="submit">
+                <button id="sub">登录</button>
+            </div>
+            <span id="errorTips"></span>
+        </form>
+    </div>
+</div>
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="js/loginVerify1.js"></script>
+</body>
+</html>

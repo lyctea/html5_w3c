@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Swiper插件测试</title>
+
+    <link rel="stylesheet" type="text/css" href="./lib/swiper-3.4.2.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/animate.css">
+    <style type="text/css">
+        .swiper-container {
+            width: 750px;
+            height: 1206px;
+        }
+        .div1 {
+          background: url('./images/carousel_bg.jpg') no-repeat 0 -128px;
+        }
+
+        .div2 {
+          background: url('./images/carousel_bg.jpg') no-repeat 0 -1334px;
+        }
+
+        .div3 {
+          background: url('./images/carousel_bg.jpg') no-repeat 0 -2504px;
+        }
+
+        .div4 {
+          background: url('./images/carousel_bg.jpg') no-repeat 0 -3746px;
+        }
+
+        .div5 {
+          background: url('./images/carousel_bg.jpg') no-repeat 0 -4952px;
+        }
+
+        #test {
+          width: 300px;
+          height: 300px;
+          background: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div id="test" class="animated bounce">
+
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide div1"></div>
+            <div class="swiper-slide div2"></div>
+            <div class="swiper-slide div3"></div>
+            <div class="swiper-slide div4"></div>
+            <div class="swiper-slide div5"></div>
+        </div>
+        <!-- 如果需要分页器 -->
+<!--         <div class="swiper-pagination"></div> -->
+
+        <!-- 如果需要导航按钮 -->
+<!--         <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+        <!-- 如果需要滚动条 -->
+<!--         <div class="swiper-scrollbar"></div> -->
+    </div>
+
+
+
+    <script src="./lib/swiper-3.4.2.min.js"></script>
+
+    <script>
+      var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'vertical',
+      //  loop: true,
+
+        // 如果需要分页器
+       // pagination: '.swiper-pagination',
+
+        // 如果需要前进后退按钮
+    //    nextButton: '.swiper-button-next',
+      //  prevButton: '.swiper-button-prev',
+
+        // 如果需要滚动条
+      //  scrollbar: '.swiper-scrollbar',
+      //
+      })
+  </script>
+</body>
+</html>
