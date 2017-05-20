@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .example1 {
+            width: 300px;
+            margin: 150px auto;
+            background-color: yellow;
+            text-align: center;
+            transform: rotate(45deg);
+        }
+        .example2 {
+            width: 300px;
+            margin: 150px auto;
+            background-color: yellow;
+            text-align: center;
+            transform:  rotate(45deg) scale(0.5,3);  /*css是从右往左解析*/
+        }
+        .example3 {
+            width: 300px;
+            margin: 150px auto;
+            background-color: yellow;
+            text-align: center;
+            transform:  skew(45deg);  /*css是从右往左解析*/
+        }
+        .example4 {
+            width: 300px;
+            margin: 150px auto;
+            background-color: yellow;
+            text-align: center;
+            transform:  translate(50px,50px);  /*css是从右往左解析*/
+        }
+    </style>
+    </head>
+<body>
+    <div class="example1">example1</div>
+    <div class="example2">example1</div>
+    <div class="example3">example1</div>
+    <div class="example4">example1</div>
+
+</body>
+
+</html>
