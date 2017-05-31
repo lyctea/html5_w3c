@@ -21,6 +21,7 @@ body {
           align-items: center;
 }
 
+
 .box {
   width: 300px;
   height: 300px;
@@ -28,11 +29,12 @@ body {
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
   background: #fbfcee;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /*超出的部分隐藏*/
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);  /*在3d中的位移 xyz*/
 }
 
+/*第一个波浪*/
 .wave {
   opacity: .4;
   position: absolute;
@@ -41,13 +43,22 @@ body {
   background: #0af;
   width: 500px;
   height: 500px;
-  margin-left: -250px;
+  margin-left: -250px;  /*用负margin实现元素的水平垂直居中*/
   margin-top: -250px;
   -webkit-transform-origin: 50% 48%;
-          transform-origin: 50% 48%;
+          transform-origin: 50% 48%;  /*设置旋转元素的基点*/
   border-radius: 43%;
   -webkit-animation: drift 3000ms infinite linear;
           animation: drift 3000ms infinite linear;
+          /*
+            animatino 过渡动画函数
+            linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+            ease	规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。
+            ease-in	规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。
+            ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。
+            ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。
+            cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。
+          */
 }
 
 .wave.-three {
@@ -69,11 +80,13 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
+  /*linear-gradient 径向渐变*/
   background: -webkit-linear-gradient(top, #ee88aa, rgba(221, 238, 255, 0) 80%, rgba(255, 255, 255, 0.5));
   background: linear-gradient(to bottom, #ee88aa, rgba(221, 238, 255, 0) 80%, rgba(255, 255, 255, 0.5));
   z-index: 11;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  /*-webkit-transform:translate3d(0,0,0)触发GPU加速，让网页动画更流畅*/
 }
 
 .title {
@@ -87,15 +100,15 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   color: white;
-  text-transform: uppercase;
+  text-transform: uppercase;    /*转换文本中的大小写 这里是大写*/
   font-family: 'Playfair Display', serif;
-  letter-spacing: .4em;
+  letter-spacing: .4em;  /*字母间距*/
   font-size: 24px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  text-indent: .3em;
+  text-indent: .3em; /*首行文本的缩进*/
 }
 
-@-webkit-keyframes drift {
+@-webkit-keyframes drift {   /*就是一个简单的旋转一周的动画*/
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -116,3 +129,5 @@ body {
             transform: rotate(360deg);
   }
 }
+
+
