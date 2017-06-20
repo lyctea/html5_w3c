@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var r = /abc/igm;
+        // r.ignoreCase;
+        // r.global;
+        // r.multiline;
+
+        // console.log(r.ignoreCase);
+        // console.log(r.global);
+        // console.log(r.multiline);
+        // var r = /a(b+)a/;
+        // var arr = r.exec("_abbba_aba_");
+        // console.log(arr);  //["abbba", "bbb"]
+
+        var r = /a(b+)a/g;
+
+        var a1 = r.exec('_abbba_aba_');
+        a1 // ['abbba', 'bbb']
+        a1.index // 1
+        r.lastIndex // 6
+
+        var a2 = r.exec('_abbba_aba_');
+        a2 // ['aba', 'b']
+        a2.index // 7
+        r.lastIndex // 10
+
+        var a3 = r.exec('_abbba_aba_');
+        a3 // null
+        a3.index // TypeError: Cannot read property 'index' of null
+        r.lastIndex // 0  重置了
+
+        var a4 = r.exec('_abbba_aba_');
+        a4 // ['abbba', 'bbb']
+        a4.index // 1
+        r.lastIndex // 6
+
+        
+
+    </script>
+</body>
+</html>
+
+
+
